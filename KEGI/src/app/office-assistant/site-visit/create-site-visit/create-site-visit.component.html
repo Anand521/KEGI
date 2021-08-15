@@ -1,0 +1,759 @@
+<body class="fix-header fix-sidebar card-no-border">
+  <div class="preloader" style="display: none;">
+    <svg class="circular" viewbox="25 25 50 50">
+      <circle
+        class="path"
+        cx="50"
+        cy="50"
+        r="20"
+        fill="none"
+        stroke-width="2"
+        stroke-miterlimit="10"
+      ></circle>
+    </svg>
+  </div>
+
+  <div id="main-wrapper">
+      <!-- <header class="topbar">
+        <div class="container">
+          <nav class="navbar top-navbar navbar-toggleable-sm navbar-light">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="dashboard.html"
+                ><img src="assets/images/logo.png" alt="KEGI" class="dark-logo" />
+              </a>
+            </div>
+
+            <div class="main-menu">
+              <nav class="navbar top-navbar navbar-toggleable-sm navbar-light">
+                <ul class="navbar-nav my-lg-0">
+                  <li class="nav-item noarrowdrop">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      routerLink="home"
+                      routerLinkActive="active"
+                    >
+                      <span>Home</span></a
+                    >
+                  </li>
+                  <li class="nav-item noarrowdrop">
+                    <a
+                      class="nav-link dropdown-toggle active"
+                      routerLink="site-visit"
+                      routerLinkActive="active"
+                      ><span>Site Visit</span></a
+                    >
+                  </li>
+                  <li class="nav-item noarrowdrop">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      routerLink="work-visit"
+                      routerLinkActive="active"
+                      ><span>Work Visit</span></a
+                    >
+                  </li>
+                  <li class="nav-item noarrowdrop">
+                    <a class="nav-link dropdown-toggle" href="#"
+                      ><span>Track Supervisor</span></a
+                    >
+                  </li>
+                  <li class="nav-item noarrowdrop">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      routerLink="supervisor-schedul"
+                      routerLinkActive="active"
+                      ><span>Supervisor Schedul</span></a
+                    >
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="navbar-collapse ml-auto" style="width: auto">
+              <ul class="navbar-nav mr-auto mt-md-0">
+                <li class="nav-item">
+                  <a
+                    class="nav-link nav-toggler hidden-md-up"
+                    href="javascript:void(0)"
+                    ><i class="fa fa-bars"></i
+                  ></a>
+                </li>
+              </ul>
+
+              <ul class="navbar-nav my-lg-0 topmenu-content">
+                <li class="nav-item dropdown noarrowdrop">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <i class="fa fa-bell text-theme"></i>
+                    <div class="notify"><span class="point"></span></div>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right mailbox scale-up">
+                    <ul>
+                      <li>
+                        <div class="drop-title">Notifications</div>
+                      </li>
+                      <li>
+                        <div class="message-center">
+                          <a href="#" class="d-flex">
+                            <div class="mail-contnet">
+                              <h5>Luanch Admin</h5>
+                              <span class="mail-desc"
+                                >Just see the my admin!
+                              </span>
+                            </div>
+                            <div class="ml-auto">
+                              <small class="time text-muted">9:30 AM </small>
+                            </div>
+                          </a>
+                          <a href="#" class="d-flex">
+                            <div class="mail-contnet">
+                              <h5>Event today</h5>
+                              <span class="mail-desc"
+                                >Just a reminder that have event
+                              </span>
+                            </div>
+                            <div class="ml-auto">
+                              <small class="time text-muted">9:10 AM </small>
+                            </div>
+                          </a>
+                          <a href="#" class="d-flex">
+                            <div class="mail-contnet">
+                              <h5>Pavan kumar</h5>
+                              <span class="mail-desc"
+                                >You can customize this as you want
+                              </span>
+                            </div>
+                            <div class="ml-auto">
+                              <small class="time text-muted">9:08 AM </small>
+                            </div>
+                          </a>
+                          <a href="#" class="d-flex">
+                            <div class="mail-contnet">
+                              <h5>Event today</h5>
+                              <span class="mail-desc"
+                                >Just a reminder that have event
+                              </span>
+                            </div>
+                            <div class="ml-auto">
+                              <small class="time text-muted">9:10 AM </small>
+                            </div>
+                          </a>
+                          <a href="#" class="d-flex">
+                            <div class="mail-contnet">
+                              <h5>Event today</h5>
+                              <span class="mail-desc"
+                                >Just a reminder that have event
+                              </span>
+                            </div>
+                            <div class="ml-auto">
+                              <small class="time text-muted">9:10 AM </small>
+                            </div>
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <a
+                          class="nav-link text-center"
+
+                        >
+                          <strong>Check all notifications </strong>
+                          <i class="fa fa-angle-right"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <i class="fa fa-user"></i>
+                    <span class="d-none d-lg-inline-block">
+                      &nbsp; Anjali Shekharan</span
+                    ></a
+                  >
+                  <div class="dropdown-menu dropdown-menu-right scale-up">
+                    <ul class="dropdown-user">
+                      <li>
+                        <a  routerLink="my-profile" routerLinkActive="active" class="dw-user-box">
+                          <div class="u-img"><i class="fa fa-user"></i></div>
+                          <div class="u-text">
+                            <h4>Anjali Shekharan</h4>
+                            <p class="text-muted">Office Assistant</p>
+                          </div>
+                        </a>
+                        <div class="email_mobile_links d-flex">
+                          <div class="textemail"><p class="mb-2">Email:</p></div>
+                          <div class="textemail_r">
+                            <p class="mb-2">anjali@gmail.com</p>
+                          </div>
+                        </div>
+                        <div class="email_mobile_links d-flex">
+                          <div class="textemail"><p class="mb-2">Mobile:</p></div>
+                          <div class="textemail_r">
+                            <p class="mb-2">+91 4578784541</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li role="separator" class="divider"></li>
+                      <li>
+                        <a href="#" class="text-theme"
+                          ><i class="fa fa-lock"></i> Change Password
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" class="text-theme"
+                          ><i class="fa fa-power-off"></i> Logout
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <aside class="left-sidebar">
+        <div class="scroll-sidebar">
+          <nav class="sidebar-nav">
+            <ul id="sidebarnav">
+              <li>
+                <a href="home.html"><span class="hide-menu"> Home </span></a>
+              </li>
+              <li>
+                <a class="active"
+                  ><span class="hide-menu"> Site Visit </span></a
+                >
+              </li>
+              <li>
+                <a href="work-visit.html"
+                  ><span class="hide-menu"> Work Visit </span></a
+                >
+              </li>
+              <li>
+                <a href="#"><span class="hide-menu"> Track Supervisor </span></a>
+              </li>
+              <li>
+                <a href="supervisor-schedul.html"
+                  ><span class="hide-menu"> Supervisor Schedul </span></a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </aside> -->
+      <app-navbar></app-navbar>
+    <div class="page-wrapper">
+      <div class="container">
+        <div class="card mt-3">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <form
+                  action="#"
+                  method="post"
+                  class="bootstrap-form needs-validation"
+                  id="siteVisite"
+                  novalidate="novalidate"
+                >
+                  <h4>Create Site Visit Service</h4>
+                  <div class="form-group">
+                    <label for="Nmae">Customer Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="Nmae"
+                      name="Nmae"
+                      autocomplete="off"
+                      placeholder=""
+                      required=""
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="MobileNumber">Mobile Number</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="MobileNumber"
+                      name="MobileNumber"
+                      autocomplete="off"
+                      placeholder=""
+                      required=""
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="Email">Email ID</label>
+                    <input
+                      type="email"
+                      class="form-control example"
+                      id="Email"
+                      name="Email"
+                      autocomplete="off"
+                      placeholder=""
+                      required=""
+                    />
+                  </div>
+                  <br />
+
+                  <h4>Add / Select Delivery Address</h4>
+                  <div class="form-group">
+                    <label for="Address">Address</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="Address"
+                      name="Address"
+                      autocomplete="off"
+                      required=""
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="Society">House No./Flat No./Society</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="Society"
+                      name="Society"
+                      autocomplete="off"
+                      required=""
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="Landmark">Landmark</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="Landmark"
+                      name="Landmark"
+                      autocomplete="off"
+                      required=""
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="Person">Contact Person Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="Person"
+                      name="Person"
+                      autocomplete="off"
+                      required=""
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="MobileNumber2">Mobile Number</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="MobileNumber2"
+                      name="MobileNumber2"
+                      autocomplete="off"
+                      placeholder=""
+                      required=""
+                    />
+                  </div>
+                  <div class="text-center form-group m-t-20 row">
+                    <div class="col-sm-6">
+                      <button
+                        class="btn btn-flat-orange btn-md w-100"
+                        type="button"
+                      >
+                        Add
+                      </button>
+                    </div>
+                    <div class="col-sm-6">
+                      <a class="to-cancel d-block">
+                        Cancel
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="Describe">Describe Issue</label>
+                    <textarea
+                      type="text"
+                      class="form-control"
+                      rows="6"
+                      id="Describe"
+                      name="Describe"
+                      placeholder="Write from here..."
+                    ></textarea>
+                  </div>
+
+                  <div class="fi-profile-photo">
+                    <label for=""
+                      >Upload Image/Video <small>(Optional)</small></label
+                    >
+                    <span class="imagebox"
+                      ><label for="photoupload"
+                        ><img
+                          id="blah-b"
+                          src="../images/upload-img.png"
+                          alt="" /></label
+                    ></span>
+                    <label for="photoupload" class="fi-custom-upladfile">
+                      <input
+                        onChange="document.getElementById('blah-b').src = window.URL.createObjectURL(this.files[0])"
+                        multiple=""
+                        id="photoupload"
+                        name="photoupload"
+                        type="file"
+                      />
+                    </label>
+                  </div>
+                  <br />
+
+                  <div class="superviser_content">
+                    <label>Select Supervisor</label>
+                    <div class="form-group mb-0 position-relative">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="searchBox"
+                        placeholder="Search.."
+                      />
+                      <span class="addons" style="left: 7px"
+                        ><i class="fa fa-search"></i
+                      ></span>
+                    </div>
+                    <div class="supervisor_list demo-radio-button">
+                      <br />
+                      <label>Supervisor List</label>
+                      <div class="message-center">
+                        <div class="radeio-list">
+                          <input
+                            name="Supervisor"
+                            type="radio"
+                            id="radio_1"
+                            class="with-gap radio-col-black"
+                          />
+                          <label for="radio_1">Manish Kuma </label>
+                        </div>
+                        <div class="radeio-list">
+                          <input
+                            name="Supervisor"
+                            type="radio"
+                            id="radio_2"
+                            class="with-gap radio-col-black"
+                          />
+                          <label for="radio_2">Juhi Namedar</label>
+                        </div>
+                        <div class="radeio-list">
+                          <input
+                            name="Supervisor"
+                            type="radio"
+                            id="radio_3"
+                            class="with-gap radio-col-black"
+                          />
+                          <label for="radio_3">Anjum Sethiy</label>
+                        </div>
+                        <div class="radeio-list">
+                          <input
+                            name="Supervisor"
+                            type="radio"
+                            id="radio_4"
+                            class="with-gap radio-col-black"
+                          />
+                          <label for="radio_4">Suman Lal</label>
+                        </div>
+                        <div class="radeio-list">
+                          <input
+                            name="Supervisor"
+                            type="radio"
+                            id="radio_5"
+                            class="with-gap radio-col-black"
+                          />
+                          <label for="radio_5">Kripal Shah</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="btntex">
+                    <button class="btn btn-flat-orange btn-md" type="button">
+                      Create Request
+                    </button>
+                  </div>
+                </form>
+              </div>
+
+              <div class="col-md-6">
+                <br />
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="asign_date_time">
+                      <div class="form-group" id="datepicker-inline">
+                        <label>Visit Date</label>
+                        <input
+                          type="text"
+                          class="form-control mydatepicker"
+                          name="DatePic"
+                          id="DatePic"
+                          placeholder="mm/dd/yyyy"
+                        />
+                        <label for="DatePic" class="change_text text-theme"
+                          >Change
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="asign_date_time">
+                      <div class="form-group clockpicker">
+                        <label>Visit Time</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="TimePic"
+                          id="TimePic"
+                          value="09:30AM"
+                        />
+                        <label for="TimePic" class="change_text text-theme"
+                          >Change</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <br />
+                <div class="saved_address">
+                  <h4>Saved Delivery Address</h4>
+                  <div class="radeio-list mb-3">
+                    <input
+                      name="Saved"
+                      type="radio"
+                      id="address"
+                      class="with-gap radio-col-black"
+                    />
+                    <label for="address"
+                      ><p>
+                        <b>Mr. Mitesh Shah</b> <br />
+                        16-Shivalik Plaza, Nr. Rajpath Club, Bodakdev Cross
+                        Rds., Ahmedabad - 15 Mo. +91 7878454574
+                      </p>
+                    </label>
+                  </div>
+                  <div class="radeio-list">
+                    <input
+                      name="Saved"
+                      type="radio"
+                      id="address2"
+                      class="with-gap radio-col-black"
+                    />
+                    <label for="address2"
+                      ><p>
+                        <b>Mr. Jaimin Shah</b> <br />
+                        11/45-Oswal Business Suite, Bodakdev Cross Rds.,
+                        Ahmedabad - 15 Mo. +91 7878454574
+                      </p>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer text-center">
+        &copy; KEGI. All rights reserved.
+      </footer>
+    </div>
+  </div>
+
+  <!-- The Modal -->
+  <div class="modal modalPluginWork" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Assign Supervisor</h4>
+          <button type="button" class="close" data-dismiss="modal">
+            &times;
+          </button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="asign_date_time">
+                <div class="form-group">
+                  <label>Visit Date</label>
+                  <input
+                    type="text"
+                    class="form-control mydatepicker"
+                    name="DatePic"
+                    id="DatePic"
+                    placeholder="mm/dd/yyyy"
+                  />
+                  <label for="DatePic" class="change_text text-theme"
+                    >Change</label
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="asign_date_time">
+                <div class="form-group clockpicker">
+                  <label>Visit Time</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="TimePic"
+                    id="TimePic"
+                    value="09:30AM"
+                  />
+                  <label for="TimePic" class="change_text text-theme"
+                    >Change</label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="superviser_content">
+            <label>Select Supervisor</label>
+            <div class="form-group mb-0 position-relative">
+              <input
+                type="text"
+                class="form-control"
+                id="searchBox"
+                placeholder="Search.."
+              />
+              <span class="addons" style="left: 7px"
+                ><i class="fa fa-search"></i
+              ></span>
+            </div>
+            <div class="supervisor_list demo-radio-button">
+              <br />
+              <label>Supervisor List</label>
+              <div class="message-center">
+                <div class="radeio-list">
+                  <input
+                    name="Supervisor"
+                    type="radio"
+                    id="radio_1"
+                    class="with-gap radio-col-black"
+                  />
+                  <label for="radio_1">Manish Kuma </label>
+                </div>
+                <div class="radeio-list">
+                  <input
+                    name="Supervisor"
+                    type="radio"
+                    id="radio_2"
+                    class="with-gap radio-col-black"
+                  />
+                  <label for="radio_2">Juhi Namedar</label>
+                </div>
+                <div class="radeio-list">
+                  <input
+                    name="Supervisor"
+                    type="radio"
+                    id="radio_3"
+                    class="with-gap radio-col-black"
+                  />
+                  <label for="radio_3">Anjum Sethiy</label>
+                </div>
+                <div class="radeio-list">
+                  <input
+                    name="Supervisor"
+                    type="radio"
+                    id="radio_4"
+                    class="with-gap radio-col-black"
+                  />
+                  <label for="radio_4">Suman Lal</label>
+                </div>
+                <div class="radeio-list">
+                  <input
+                    name="Supervisor"
+                    type="radio"
+                    id="radio_5"
+                    class="with-gap radio-col-black"
+                  />
+                  <label for="radio_5">Kripal Shah</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <!--<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>-->
+            <button
+              class="btn btn-info btn-lg btn-block theme-btn theme-btn-black"
+              type="submit"
+            >
+              Done
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- All Jquery
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/tether.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/jquery.slimscroll.js"></script>
+  <script src="../js/sidebarmenu.js"></script>
+  <script src="../js/sticky-kit.min.js"></script>
+
+  Custom JavaScript
+  <script src="../js/custom.min.js"></script>
+
+   Plugin JavaScript -->
+  <!-- <script src="../js/plug/moment.js"></script>
+  <script src="../js/plug/jquery-clockpicker.min.js"></script>
+  <script src="../js/plug/bootstrap-datepicker.min.js"></script>
+  <script>
+    // Clock pickers
+    $("#single-input").clockpicker({
+      placement: "bottom",
+      align: "left",
+      autoclose: true,
+      default: "now",
+    });
+    $(".clockpicker")
+      .clockpicker({
+        twelvehour: true,
+        donetext: "Done",
+        inline: true,
+      })
+      .find("input")
+      .change(function () {
+        console.log(this.value);
+      });
+    $("#check-minutes").click(function (e) {
+      // Have to stop propagation here
+      e.stopPropagation();
+      input.clockpicker("show").clockpicker("toggleView", "minutes");
+    });
+    if (/mobile/i.test(navigator.userAgent)) {
+      $("input").prop("readOnly", true);
+    }
+
+    // Date Picker
+    jQuery(".mydatepicker, #datepicker").datepicker();
+    jQuery("#datepicker-autoclose").datepicker({
+      autoclose: true,
+      todayHighlight: true,
+    });
+
+    /*jQuery('#datepicker-inline').datepicker({
+			todayHighlight: true
+		});*/
+  </script> -->
+</body>

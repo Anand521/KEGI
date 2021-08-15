@@ -1,0 +1,894 @@
+<body>
+  <div class="preloader" style="display: none">
+    <svg class="circular" viewbox="25 25 50 50">
+      <circle
+        class="path"
+        cx="50"
+        cy="50"
+        r="20"
+        fill="none"
+        stroke-width="2"
+        stroke-miterlimit="10"
+      ></circle>
+    </svg>
+  </div>
+
+  <section id="wrapper" class="login-register login-sidebar">
+    <div class="row">
+      <div class="login-imagecontent col-md-6 position-relative">
+        <img src="assets/images/login-img.jpg" alt="" />
+        <div class="text_imgcontent">
+          <h3>Lorem Epsum</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+        </div>
+      </div>
+      <div class="login-box col-md-6">
+        <div class="card-block">
+          <div class="loginMain" id="loginform">
+            <div class="loginpage_logo">
+              <a
+                ><img src="assets/images/logo.png" alt="Menu kard" height="100"
+              /></a>
+            </div>
+            <br />
+            <br *ngIf="!error" />
+            <div class="alert alert-danger" role="alert" *ngIf="error">
+              <h5 class="alert-heading text-center">Error!</h5>
+              <p class="mb-0 text-center">{{ error }}</p>
+            </div>
+            <h2 class="text-dark pagetitle">Login as</h2>
+            <div class="logintab_button">
+              <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a
+                    href="#Supervisor"
+                    class="btn tablogin-btn nav-link active"
+                    data-toggle="tab"
+                    ><span class="checkicon"
+                      ><span class="checkmark"></span
+                    ></span>
+                    Supervisor</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    href="#Engineer"
+                    class="btn tablogin-btn nav-link"
+                    data-toggle="tab"
+                    ><span class="checkicon"
+                      ><span class="checkmark"></span
+                    ></span>
+                    Engineer</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    href="#OfficeAssistant"
+                    class="btn tablogin-btn nav-link"
+                    data-toggle="tab"
+                    ><span class="checkicon"
+                      ><span class="checkmark"></span
+                    ></span>
+                    Office Assistant</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="tab-content">
+              <!-- Supervisor -->
+              <div class="tab-pane container active" id="Supervisor">
+                <form
+                  [formGroup]="logInSupervisor"
+                  method="post"
+                  class="loginpageform bootstrap-form needs-validation"
+                  id="loginformSupervisor"
+                  novalidate
+                >
+                  <div class="form-group text-left">
+                    <label for="input1">Enter your Email</label>
+                    <!--<input type="text" class="form-control" id="input1" required="" />	-->
+                    <input
+                      type="email"
+                      #emailInput
+                      (keydown.space)="$event.preventDefault()"
+                      formControlName="restaurantMobile"
+                      class="form-control example"
+                      id="Emailsupervisor"
+                      name="Email"
+                      autocomplete="off"
+                      placeholder="Enter Email ID"
+                    />
+                    <small
+                      class="text-danger small"
+                      *ngIf="
+                        logInSupervisor.controls['restaurantMobile'].hasError(
+                          'pattern'
+                        ) &&
+                        (logInSupervisor.controls['restaurantMobile'].dirty ||
+                          logInSupervisor.controls['restaurantMobile'].touched)
+                      "
+                      >Please enter valid email.</small
+                    >
+                    <small
+                      class="text-danger small"
+                      *ngIf="
+                        logInSupervisor.controls['restaurantMobile'].hasError(
+                          'required'
+                        )
+                      "
+                      >Please enter email.</small
+                    >
+                  </div>
+                  <div class="form-group text-left position-relative">
+                    <label for="input2">Password </label>
+                    <input
+                      type="Password"
+                      #passwordInput
+                      [type]="hide ? 'password' : 'text'"
+                      minlength="4"
+                      (keydown.space)="$event.preventDefault()"
+                      formControlName="restaurantPassword"
+                      class="form-control"
+                      id="myInputSuperVisor"
+                      name="Password"
+                      placeholder="Enter Password"
+                    />
+                    <!-- <input type="password" class="form-control" id="myInput" value="" required="" />-->
+                    <a class="pasword-hideshow">
+                      <i class="fa fa-eye-slash"></i>
+                    </a>
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        logInSupervisor.controls['restaurantPassword'].hasError(
+                          'required'
+                        )
+                      "
+                      >Please enter password.</small
+                    >
+                  </div>
+                  <div class="form-group">
+                    <div class="d-flex">
+                      <p class="">
+                        <a
+                          (click)="openForgetSupervisor()"
+                          id="to-recover"
+                          class="to-recover"
+                          ><i class="fa fa-lock m-r-5"></i> Forgot Password?
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="text-center m-t-20">
+                    <button
+                      class="btn btn-info btn-lg btn-block theme-btn"
+                      type="submit"
+                    >
+                      Login
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <!-- Supervisor -->
+
+              <!-- engineer -->
+              <div class="tab-pane container fade" id="Engineer">
+                <form
+                  [formGroup]="logInEngineer"
+                  (ngSubmit)="loginEngineer(logInEngineer.value)"
+                  class="loginpageform bootstrap-form needs-validation"
+                  id="loginformEngineer"
+                  novalidate
+                >
+                  <div class="form-group text-left">
+                    <label for="input1">Enter your Email</label>
+                    <!--<input type="text" class="form-control" id="input1" required="" />	-->
+                    <input
+                      type="email"
+                      #emailInputrestaurant
+                      (keydown.space)="$event.preventDefault()"
+                      formControlName="restaurantMobile"
+                      class="form-control example"
+                      id="EmailEngineer"
+                      name="Email"
+                      autocomplete="off"
+                      placeholder="Enter Email ID"
+                    />
+                    <small
+                      class="text-danger small"
+                      *ngIf="
+                        logInEngineer.controls['restaurantMobile'].hasError(
+                          'pattern'
+                        ) &&
+                        (logInEngineer.controls['restaurantMobile'].dirty ||
+                          logInEngineer.controls['restaurantMobile'].touched)
+                      "
+                      >Please enter valid email.</small
+                    >
+                    <small
+                      class="text-danger small"
+                      *ngIf="
+                        logInEngineer.controls['restaurantMobile'].hasError(
+                          'required'
+                        )
+                      "
+                      >Please enter email.</small
+                    >
+                  </div>
+                  <div class="form-group text-left position-relative">
+                    <label for="input2">Password </label>
+                    <input
+                      type="Password"
+                      #passwordInputrestaurant
+                      [type]="hide ? 'password' : 'text'"
+                      minlength="4"
+                      (keydown.space)="$event.preventDefault()"
+                      formControlName="restaurantPassword"
+                      class="form-control"
+                      id="myInputEngineer"
+                      name="Password"
+                      placeholder="Enter Password"
+                    />
+                    <!-- <input type="password" class="form-control" id="myInput" value="" required="" />-->
+                    <a class="pasword-hideshow">
+                      <i class="fa fa-eye-slash"></i>
+                    </a>
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        logInEngineer.controls['restaurantPassword'].hasError(
+                          'required'
+                        )
+                      "
+                      >Please enter password.</small
+                    >
+                  </div>
+                  <div class="form-group">
+                    <div class="d-flex">
+                      <p class="">
+                        <a
+                          (click)="openForgetEngineer()"
+                          id="to-recover"
+                          class="to-recover"
+                          ><i class="fa fa-lock m-r-5"></i> Forgot Password?
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="text-center m-t-20">
+                    <button
+                      class="btn btn-info btn-lg btn-block theme-btn"
+                      type="submit"
+                    >
+                      Login
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <!-- engineer -->
+
+              <!-- office-restaurant -->
+
+              <div class="tab-pane container fade" id="OfficeAssistant">
+                <form
+                  [formGroup]="logInOfficerestaurant"
+                  (ngSubmit)="loginOfficeAssistant(logInOfficerestaurant.value)"
+                  class="loginpageform bootstrap-form needs-validation"
+                  id="loginformOfficerestaurant"
+                  novalidate
+                >
+                  <div class="form-group text-left">
+                    <label for="input1">Enter your Email</label>
+                    <!--<input type="text" class="form-control" id="input1" required="" />	-->
+                    <input
+                      type="email"
+                      #emailInputrestaurant
+                      (keydown.space)="$event.preventDefault()"
+                      formControlName="restaurantMobile"
+                      class="form-control example"
+                      id="emailOffice"
+                      name="Email"
+                      autocomplete="off"
+                      placeholder="Enter Email ID"
+                    />
+                    <small
+                      class="text-danger small"
+                      *ngIf="
+                        logInOfficerestaurant.controls[
+                          'restaurantMobile'
+                        ].hasError('pattern') &&
+                        (logInOfficerestaurant.controls['restaurantMobile']
+                          .dirty ||
+                          logInOfficerestaurant.controls['restaurantMobile']
+                            .touched)
+                      "
+                      >Please enter valid email.</small
+                    >
+                    <small
+                      class="text-danger small"
+                      *ngIf="
+                        logInOfficerestaurant.controls[
+                          'restaurantMobile'
+                        ].hasError('required')
+                      "
+                      >Please enter email.</small
+                    >
+                  </div>
+                  <div class="form-group text-left position-relative">
+                    <label for="input2">Password </label>
+                    <input
+                      type="Password"
+                      #passwordInputrestaurant
+                      [type]="hide ? 'password' : 'text'"
+                      minlength="4"
+                      (keydown.space)="$event.preventDefault()"
+                      formControlName="restaurantPassword"
+                      class="form-control"
+                      id="myInputOfficeAssistant"
+                      name="Password"
+                      placeholder="Enter Password"
+                    />
+                    <!-- <input type="password" class="form-control" id="myInput" value="" required="" />-->
+                    <a class="pasword-hideshow">
+                      <i class="fa fa-eye-slash"></i>
+                    </a>
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        logInOfficerestaurant.controls[
+                          'restaurantPassword'
+                        ].hasError('required')
+                      "
+                      >Please enter password.</small
+                    >
+                  </div>
+                  <div class="form-group">
+                    <div class="d-flex">
+                      <p class="">
+                        <a
+                          (click)="openForgetOfficerestaurant()"
+                          id="to-recover"
+                          class="to-recover"
+                          ><i class="fa fa-lock m-r-5"></i> Forgot Password?
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="text-center m-t-20">
+                    <button
+                      class="btn btn-info btn-lg btn-block theme-btn"
+                      type="submit"
+                    >
+                      Login
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <!-- office-restaurant -->
+            </div>
+          </div>
+
+          <!-- forgot-password-supervisor -->
+          <form
+            method="post"
+            class="loginpageform bootstrap-form needs-validation"
+            id="recoverform-supervisor"
+            novalidate
+          >
+            <div class="form-group">
+              <div class="col-xs-12">
+                <div class="loginpage_logo">
+                  <a href="javascript:void(0)"
+                    ><img
+                      src="assets/images/logo.png"
+                      alt="Menu kard"
+                      height="100"
+                  /></a>
+                </div>
+                <br /><br />
+                <h2 class="text-themecolor d-flex pagetitle">
+                  <span>Forgot Password</span>
+                </h2>
+                <p class="">We'll send reset link to your email</p>
+              </div>
+            </div>
+            <div class="form-group text-left">
+              <label for="input1">Email Address </label>
+              <input
+                type="email"
+                class="form-control example"
+                id="EmailOTPSupervisor"
+                name="EmailOTP"
+                autocomplete="off"
+                placeholder="Enter Email ID"
+                required
+              />
+            </div>
+            <div class="form-group text-center m-t-20">
+              <div class="col-xs-12">
+                <button
+                  class="
+                    btn btn-primary btn-lg btn-block
+                    waves-effect waves-light
+                    theme-btn
+                  "
+                  type="submit"
+                  id="to-reset-supervisor"
+                >
+                  Send OTP
+                </button>
+                <p class="text-center">
+                  <br />
+                  Go back to
+                  <a
+                    (click)="backToLoginSupervisor()"
+                    class="ml-auto"
+                    id="backlogin"
+                  >
+                    Login</a
+                  >
+                </p>
+              </div>
+            </div>
+          </form>
+          <!-- forgot-password-supervisor -->
+
+          <!-- forgot-password-engineer -->
+          <form
+            method="post"
+            class="loginpageform bootstrap-form needs-validation"
+            id="recoverform-engineer"
+            novalidate
+          >
+            <div class="form-group">
+              <div class="col-xs-12">
+                <div class="loginpage_logo">
+                  <a href="javascript:void(0)"
+                    ><img
+                      src="assets/images/logo.png"
+                      alt="Menu kard"
+                      height="100"
+                  /></a>
+                </div>
+                <br /><br />
+                <h2 class="text-themecolor d-flex pagetitle">
+                  <span>Forgot Password</span>
+                </h2>
+                <p class="">We'll send reset link to your email</p>
+              </div>
+            </div>
+            <div class="form-group text-left">
+              <label for="input1">Email Address </label>
+              <input
+                type="email"
+                class="form-control example"
+                id="EmailOTPEngineer"
+                name="EmailOTP"
+                autocomplete="off"
+                placeholder="Enter Email ID"
+                required
+              />
+            </div>
+            <div class="form-group text-center m-t-20">
+              <div class="col-xs-12">
+                <button
+                  class="
+                    btn btn-primary btn-lg btn-block
+                    waves-effect waves-light
+                    theme-btn
+                  "
+                  type="submit"
+                  id="to-reset-engineer"
+                >
+                  Send OTP
+                </button>
+                <p class="text-center">
+                  <br />
+                  Go back to
+                  <a
+                    (click)="backToLoginEngineer()"
+                    class="ml-auto"
+                    id="backlogin"
+                  >
+                    Login</a
+                  >
+                </p>
+              </div>
+            </div>
+          </form>
+          <!-- forgot-password-engineer -->
+
+          <!-- forgot-password-office-restaurant -->
+          <form
+            [formGroup]="forgetFormOfficerestaurantForm"
+            (ngSubmit)="
+              forgotOfficerestaurant(forgetFormOfficerestaurantForm.value)
+            "
+            class="loginpageform bootstrap-form needs-validation"
+            id="recoverform-office-restaurant"
+            novalidate
+          >
+            <div class="form-group">
+              <div class="col-xs-12">
+                <div class="loginpage_logo">
+                  <a href="javascript:void(0)"
+                    ><img
+                      src="assets/images/logo.png"
+                      alt="Menu kard"
+                      height="100"
+                  /></a>
+                </div>
+                <br />
+                <!-- <br> -->
+                <br *ngIf="!error" />
+                <div class="alert alert-danger" role="alert" *ngIf="error">
+                  <h5 class="alert-heading text-center">Error!</h5>
+                  <p class="mb-0 text-center">{{ error }}</p>
+                </div>
+                <h2 class="text-themecolor d-flex pagetitle">
+                  <span>Forgot Password</span>
+                </h2>
+                <p class="">We'll send reset link to your email</p>
+              </div>
+            </div>
+            <div class="form-group text-left">
+              <label for="input1">Email Address </label>
+              <input
+                type="email"
+                #forgotrestaurantEmail
+                (keydown.space)="$event.preventDefault()"
+                formControlName="restaurantMobile"
+                class="form-control email"
+                placeholder="Enter Email ID"
+                id="emailOfficeAssistant"
+                name="email"
+                autocomplete="off"
+              />
+              <small
+                class="text-danger"
+                *ngIf="
+                  forgetFormOfficerestaurantForm.controls[
+                    'restaurantMobile'
+                  ].hasError('required')
+                "
+                >This field is required</small
+              >
+              <small
+                class="text-danger"
+                *ngIf="
+                  forgetFormOfficerestaurantForm.controls[
+                    'restaurantMobile'
+                  ].hasError('pattern') &&
+                  (forgetFormOfficerestaurantForm.controls['restaurantMobile']
+                    .dirty ||
+                    forgetFormOfficerestaurantForm.controls['restaurantMobile']
+                      .touched)
+                "
+                >Please enter valid email address or phone number</small
+              >
+            </div>
+            <div class="form-group text-center m-t-20">
+              <div class="col-xs-12">
+                <button
+                  class="
+                    btn btn-primary btn-lg btn-block
+                    waves-effect waves-light
+                    theme-btn
+                  "
+                  type="submit"
+                >
+                  Send OTP
+                </button>
+                <p class="text-center">
+                  <br />
+                  Go back to
+                  <a (click)="backToLoginOfficerestaurant()" class="ml-auto">
+                    Login</a
+                  >
+                </p>
+              </div>
+            </div>
+          </form>
+          <!-- forgot-password-office-restaurant -->
+
+          <!-- otp-verification-restaurant -->
+          <form
+            [formGroup]="verificationOfficerestaurantForm"
+            (ngSubmit)="onrestaurantOTP(verificationOfficerestaurantForm.value)"
+            class="loginpageform bootstrap-form needs-validation"
+            id="OTP_verification_restaurant"
+            novalidate
+          >
+            <div class="form-group">
+              <div class="col-xs-12">
+                <div class="loginpage_logo">
+                  <a href="javascript:void(0)"
+                    ><img
+                      src="assets/images/logo.png"
+                      alt="Menu kard"
+                      height="100"
+                  /></a>
+                </div>
+                <br />
+                <!-- <br> -->
+                <br *ngIf="!error" />
+                <div class="alert alert-danger" role="alert" *ngIf="error">
+                  <h5 class="alert-heading text-center">Error!</h5>
+                  <p class="mb-0 text-center">{{ error }}</p>
+                </div>
+                <h2 class="text-themecolor d-flex pagetitle">
+                  <span>Forgot Password</span>
+                  <a href="#" class="ml-auto" id="backlogin"
+                    ><i class="fa fa-arrow-left"></i> Back</a
+                  >
+                </h2>
+                <p class="">OTP will be received on the Email you entered</p>
+              </div>
+            </div>
+            <div class="form-group text-left">
+              <label for="input1">Enter your Email</label>
+              <!--<input type="text" class="form-control" id="input1" required="" />-->
+              <input
+                type="email"
+                formControlName="restaurantMobile"
+                class="form-control example"
+                id="EmailVerify"
+                name="EmailVerify"
+                autocomplete="off"
+                placeholder="Enter Email ID"
+                readonly
+              />
+            </div>
+            <div class="form-group text-left">
+              <label for="input1">Enter OTP</label>
+              <div
+                class="
+                  d-flex
+                  otpFormGrp
+                  position-relative
+                  otpverification_filed
+                  digit-group
+                "
+                [ngClass]="{
+                  'form-group':
+                    !verificationOfficerestaurantForm.controls[
+                      'restaurantOTP1'
+                    ].hasError('required') &&
+                    !verificationOfficerestaurantForm.controls[
+                      'restaurantOTP2'
+                    ].hasError('required') &&
+                    !verificationOfficerestaurantForm.controls[
+                      'restaurantOTP3'
+                    ].hasError('required') &&
+                    !verificationOfficerestaurantForm.controls[
+                      'restaurantOTP4'
+                    ].hasError('required')
+                }"
+              >
+                <input
+                  type="text"
+                  #restaurantInputOTP1
+                  formControlName="restaurantOTP1"
+                  (keydown.space)="$event.preventDefault()"
+                  id="digit-1"
+                  name="digit-1"
+                  data-next="digit-2"
+                  class="form-control col"
+                  oninput="this.value = this.value.replace(/[^0-9.]/g, '');"
+                />
+                <input
+                  type="text"
+                  #restaurantInputOTP2
+                  formControlName="restaurantOTP2"
+                  (keydown.space)="$event.preventDefault()"
+                  id="digit-2"
+                  name="digit-2"
+                  data-next="digit-3"
+                  data-previous="digit-1"
+                  class="form-control col"
+                  oninput="this.value = this.value.replace(/[^0-9.]/g, '');"
+                />
+                <input
+                  type="text"
+                  #restaurantInputOTP3
+                  formControlName="restaurantOTP3"
+                  (keydown.space)="$event.preventDefault()"
+                  id="digit-3"
+                  name="digit-3"
+                  data-next="digit-4"
+                  data-previous="digit-2"
+                  class="form-control col"
+                  oninput="this.value = this.value.replace(/[^0-9.]/g, '');"
+                />
+                <input
+                  type="text"
+                  #restaurantInputOTP4
+                  formControlName="restaurantOTP4"
+                  (keydown.space)="$event.preventDefault()"
+                  id="digit-4"
+                  name="digit-4"
+                  data-next="digit-5"
+                  data-previous="digit-3"
+                  class="form-control col"
+                  oninput="this.value = this.value.replace(/[^0-9.]/g, '');"
+                />
+              </div>
+              <!-- <a (click)="onResendClick()" class="text-blue resend">Resend OTP</a> -->
+              <div class="">
+                <small
+                  class="text-danger"
+                  *ngIf="
+                    verificationOfficerestaurantForm.controls[
+                      'restaurantOTP1'
+                    ].hasError('required') ||
+                    verificationOfficerestaurantForm.controls[
+                      'restaurantOTP2'
+                    ].hasError('required') ||
+                    verificationOfficerestaurantForm.controls[
+                      'restaurantOTP3'
+                    ].hasError('required') ||
+                    verificationOfficerestaurantForm.controls[
+                      'restaurantOTP4'
+                    ].hasError('required')
+                  "
+                  >This field is required</small
+                >
+              </div>
+            </div>
+            <br />
+            <div class="form-group text-center m-t-20">
+              <button
+                class="
+                  btn btn-primary btn-lg btn-block
+                  waves-effect waves-light
+                  theme-btn
+                "
+                type="submit"
+              >
+                Verify OTP
+              </button>
+            </div>
+          </form>
+          <!-- otp-verification -->
+
+          <!-- reset-password -->
+          <form
+            [formGroup]="resetOfficerestaurantForm"
+            (ngSubmit)="onrestaurantReset(resetOfficerestaurantForm.value)"
+            method="post"
+            class="loginpageform bootstrap-form needs-validation"
+            id="newpasswordrestaurant"
+            novalidate
+          >
+            <!--<form class="loginpageform" id="newpassword" action="dashboard.html">-->
+            <div class="form-group">
+              <div class="col-xs-12">
+                <div class="loginpage_logo">
+                  <a href="javascript:void(0)"
+                    ><img
+                      src="assets/images/logo.png"
+                      alt="Menu kard"
+                      height="100"
+                  /></a>
+                </div>
+                <br /><br />
+                <h2 class="text-themecolor pagetitle">Reset your Password</h2>
+              </div>
+            </div>
+            <div class="form-group text-left position-relative">
+              <label for="NewPassword">New password </label>
+              <a class="pasword-hideshow cursr" (click)="new = !new"
+                ><i
+                  class="fa"
+                  [ngClass]="{ 'fa-eye': !new, 'fa-eye-slash': new }"
+                ></i
+              ></a>
+              <input
+                #assisNewPassword
+                type="password"
+                [type]="new ? 'password' : 'text'"
+                formControlName="restaurantNewPassword"
+                (keydown.space)="$event.preventDefault()"
+                placeholder="Enter new password"
+                class="form-control"
+                id="NewPassword"
+                name="NewPassword"
+              />
+              <small
+                class="text-danger"
+                *ngIf="
+                  resetOfficerestaurantForm.controls[
+                    'restaurantNewPassword'
+                  ].hasError('required')
+                "
+                >Please enter new password</small
+              >
+              <small
+                class="text-danger"
+                *ngIf="
+                  resetOfficerestaurantForm.controls[
+                    'restaurantNewPassword'
+                  ].hasError('pattern') &&
+                  (resetOfficerestaurantForm.controls['restaurantNewPassword']
+                    .dirty ||
+                    resetOfficerestaurantForm.controls['restaurantNewPassword']
+                      .touched)
+                "
+                >Password needs to be at least eight characters, one uppercase
+                letter and one number.</small
+              >
+            </div>
+            <div class="form-group text-left position-relative">
+              <label for="ConfirmPassword">Confirm new password </label>
+              <a class="pasword-hideshow cursr" (click)="confirm = !confirm"
+                ><i
+                  class="fa"
+                  [ngClass]="{ 'fa-eye': !confirm, 'fa-eye-slash': confirm }"
+                ></i
+              ></a>
+              <input
+                #assisReNewPassword
+                type="password"
+                [type]="confirm ? 'password' : 'text'"
+                formControlName="restaurantReNewPassword"
+                (keydown.space)="$event.preventDefault()"
+                class="form-control"
+                placeholder="Enter re-new password"
+                id="ConfirmPassword"
+                name="ConfirmPassword"
+              />
+              <small
+                class="text-danger"
+                *ngIf="
+                  resetOfficerestaurantForm.controls[
+                    'restaurantReNewPassword'
+                  ].hasError('required')
+                "
+                >Please enter Re-enter new password</small
+              >
+              <small
+                class="text-danger"
+                *ngIf="resetOfficerestaurantForm.hasError('confirmedValidator')"
+                >Re-enter Password is not match</small
+              >
+            </div>
+            <div class="form-group text-center m-t-20">
+              <div class="col-xs-12">
+                <button
+                  class="
+                    btn btn-primary btn-lg btn-block
+                    waves-effect waves-light
+                    theme-btn
+                  "
+                  type="submit"
+                >
+                  Reset Password
+                </button>
+              </div>
+            </div>
+          </form>
+          <!-- reset-password -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="copyright text-center">
+        <p class="mb-0">&copy; KEGI. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, 0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-beat"
+  [fullScreen]="true"
+>
+  <p style="color: white">Loading...</p>
+</ngx-spinner>
